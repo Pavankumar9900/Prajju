@@ -1,0 +1,398 @@
+:root {
+    --primary-color: #d4af37;
+    --secondary-color: #800020;
+    --background-color: #f9f7f3;
+    --text-color: #333;
+    --accent-color: #c41e3a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s linear;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 1rem 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--secondary-color);
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+section {
+    padding: 5rem 0;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hamburger {
+    display: none;
+    margin-top: 10px;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-content {
+    position: relative;
+    top: 30%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.hero h1,
+.hero p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#countdown div {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--secondary-color);
+    padding: 1rem;
+    margin: 0 0.5rem;
+    min-width: 100px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+#countdown div:hover {
+    transform: scale(1.1);
+}
+
+
+#countdown span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.greeting {
+    background-color: #fff;
+    text-align: center;
+}
+
+.couple-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.bride,
+.groom {
+    text-align: center;
+    max-width: 300px;
+}
+
+.image-container {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1rem;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid var(--primary-color);
+}
+
+.couple-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover .couple-image {
+    transform: scale(1.1);
+}
+
+.gallery {
+    background-color: #fff;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+iframe {
+    width: 80%;
+}
+
+.image-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.events {
+    background-color: var(--background-color);
+}
+
+#eventsList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.event-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.venue {
+    text-align: center;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.rsvp {
+    background-color: #fff;
+}
+
+#rsvpForm {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#rsvpForm input,
+#rsvpForm select,
+#rsvpForm textarea {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+#rsvpForm input:focus,
+#rsvpForm select:focus,
+#rsvpForm textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.rightSide {
+    position: absolute;
+    right: -300px;
+    width: 150px;
+    height: 100vh;
+    background: whitesmoke;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightSide ul {
+    text-decoration: none;
+    margin-top: 50px;
+}
+
+.rightSide ul li {
+    list-style: none;
+    color: black;
+    position: relative;
+    left: 10px;
+    margin: 30px;
+}
+
+.rightSide a {
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .couple-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        position: absolute;
+        right: 40px;
+        height: 50px;
+        width: 40px;
+    }
+
+    #coupleNames {
+        font-size: 20px;
+    }
+
+    #countdown {
+        display: flex;
+    }
+
+    #countdown div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+        margin: 0px 5px;
+    }
+
+    .hero-content {
+        font-size: 12px;
+        max-width: 360px;
+        max-height: 300px;
+        margin: auto;
+    }
+
+    .bride,
+    .groom {
+        margin-bottom: 2rem;
+    }
+
+    #countdown div {
+        min-width: 80px;
+    }
+
+    #rsvpForm {
+        max-width: 300px;
+    }
+
+    .rightSide {
+        display: block;
+        display: flex;
+        flex-direction: column;
+    }
+}

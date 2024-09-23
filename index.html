@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ananya & Vikram's Royal Wedding Celebration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="rightSide">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#greeting">Greeting</a></li>
+                <li><a href="#couple">Couple</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#venue">Venue</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+            </ul>
+        </div>
+        <div class="hamburger">
+            <img src="hamburger.svg" alt="Menu">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#greeting">Greeting</a></li>
+                <li><a href="#couple">Couple</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#venue">Venue</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 id="coupleNames"></h1>
+                <p id="weddingDate"></p>
+                <div id="countdown"></div>
+                <button id="addToCalendar" class="btn">Add to Google Calendar</button>
+            </div>
+        </section>
+
+        <section id="greeting" class="greeting">
+            <h2>Welcome to Our Celebration</h2>
+            <p id="greetingMessage"></p>
+        </section>
+
+        <section id="couple" class="couple">
+            <h2>The Royal Couple</h2>
+            <div class="couple-info">
+                <div class="bride">
+                    <div class="image-container">
+                        <img id="brideImage"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKx3ZOIL8rvY0GNLzGLChurD1LtH7ZDd0pHA&s"
+                            alt="Bride" class="couple-image">
+                    </div>
+                    <h3 id="brideName"></h3>
+                    <p id="brideInfo"></p>
+                </div>
+                <div class="groom">
+                    <div class="image-container">
+                        <img id="groomImage"
+                            src="data:image/jpeg;base64,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"
+                            alt="Groom" class="couple-image">
+                    </div>
+                    <h3 id="groomName"></h3>
+                    <p id="groomInfo"></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <h2>Royal Moments</h2>
+            <div class="image-grid" id="imageGrid"></div>
+        </section>
+
+        <section id="events" class="events">
+            <h2>Wedding Events</h2>
+            <div id="eventsList"></div>
+        </section>
+
+        <section id="venue" class="venue">
+            <h2>Royal Venue</h2>
+            <p id="venueName"></p>
+            <p id="venueAddress"></p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31057.618876524783!2d77.0860366!3d13.3376848!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb02e8b3befd963%3A0x59e04ef63c5c42d0!2sBandimane%20Kalyana%20Mantapa!5e0!3m2!1sen!2sin!4v1727102781551!5m2!1sen!2sin"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <section id="rsvp" class="rsvp">
+            <h2>RSVP</h2>
+            <form id="rsvpForm">
+                <input type="text" id="guestName" placeholder="Your Name" required>
+                <input type="email" id="guestEmail" placeholder="Your Email" required>
+                <select id="attendance" required>
+                    <option value="">Will you attend?</option>
+                    <option value="yes">Yes, I will attend</option>
+                    <option value="no">Sorry, I can't make it</option>
+                </select>
+                <textarea id="specialRequests"
+                    placeholder="Any special requests or messages for the couple?"></textarea>
+                <button type="submit" class="btn">Send RSVP</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p id="footerText"></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
